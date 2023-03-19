@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- You DID it!
+ * 
+ * This file is part of You DID it!
+ * 
+ * You DID it! is licenced under public domain and or CC-0
+ * See http://creativecommons.org/publicdomain/zero/1.0/
+ * 
+ * You DID it! uses jQuery, licenced by the jQuery Fundation
+ * under the MIT Licence (see https://jquery.org/license/)
+ *
+ * Please notice that only the game engine is in public domain.
+ * Game data (pictures, stories, texts and more) are subject to their
+ * own licence which may differ.
+-->
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+		<title>You DID it!</title>
+		<script type="text/javascript" src="./core/jquery-2.1.4.min.js"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="./core/core.css" />
+		<script type="text/javascript" src="./core/language.js"></script>
+		<script type="text/javascript" src="./core/engine.js"></script>
+		<script type="text/javascript" src="./core/classes.js"></script>
+	</head>
+	<body>
+		<div id="error-screen"></div>
+		<div id="intro-screen">
+			<div id="start-game">
+				<button id="start-button" onclick="javascript:start(1)">New Game!</button>
+			</div>
+
+		</div>
+		<div id="game-screen">
+			<div id="main">
+				<div id="textpanel">
+					<div id="description">
+						<div class="title">Events</div>
+						<div id="description-text"></div>
+					</div>
+					<div id="rolls">
+						<div class="title">Rolls</div>
+						<div id="rolls-text"></div>
+					</div>
+					<div id="order">
+						<div class="title">Turn Order</div>
+						<ul id="order-list"></ul>
+					</div>
+					<div id="environment">
+						<div class="title">Environment/Cooldowns</div>
+						<ul></ul>
+					</div>
+				</div>
+				<div id="map">
+					<img usemap="#map"/>
+					<map name="map"/>
+				</div>
+				<div id="caption"></div>
+				<div id="result" class="result-hidden" onclick="javascript:closeResult();" style="z-index:10;"></div>
+			</div>
+			<div id="action-bar" style="background-color:#555">
+				<div id="stats">
+				</div>
+				<div id="bindings">
+				</div>
+				<div id="objects">
+					<div id="notification">
+						<div class="title"></div>
+					</div>
+					<div id="actions">
+						<ul>
+						</ul>
+					</div>
+					<div id="decisiontitle">
+					</div>
+					<div id="decisions">
+						<ul>
+						</ul>
+					</div>
+					<ul id='attacks'>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="game-over-screen">
+			<div id="game-over-situation"></div>
+			<div id="game-over-picture">
+				<a href="#" target="_new"><img /></a>
+			</div>
+			<div id="try-again">
+				<button onclick="javascript:retry()">Try again</button>
+			</div>
+		</div>
+		<div id="game-end-screen">
+			<div id="game-end-situation"></div>
+			<div id="game-end-picture">
+				<a href="#" target="_new"><img /></a>
+			</div>
+		</div>
+		<div id="footer"></div>
+		<div id="disclaimer">
+			<p>Powered by <a href="http://bquest.altervista.org">Bondage Quest!</a></p>
+		</div>
+		<a id="dllink" style="display:none;"></a>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52982603-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+		
+	</body>
+</html>

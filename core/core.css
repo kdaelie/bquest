@@ -1,0 +1,388 @@
+/* You DID it!
+ * 
+ * This file is part of You DID it!
+ * 
+ * You DID it! is licenced under public domain and or CC-0
+ * See http://creativecommons.org/publicdomain/zero/1.0/
+ * 
+ * You DID it! uses jQuery, licenced by the jQuery Fundation
+ * under the MIT Licence (see https://jquery.org/license/)
+ * 
+ * Please notice that only the game engine is in public domain.
+ * Game data (pictures, stories, texts and more) are subject to their
+ * own licence which may differ.
+ */
+
+/* This is the core structure css file. It defines the general structure
+ * of the page and should be shared among games without editing.
+ */
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	background-color: #302f2f;
+	color: #ffffff;
+}
+
+a:link {
+	color: #ffffff;
+}
+a:visited {
+	color: #ffffff;
+}
+
+#error-screen,
+#intro-screen,
+#game-over-screen,
+#game-end-screen {
+	display: none;
+}
+
+#game-screen {
+	display: block;
+}
+
+#intro-screen {
+	width: 1132px;
+	margin: auto;
+}
+#game-over-screen,
+#game-end-screen {
+	width: 964px;
+	margin: auto;
+}
+#intro-screen .intro-picture,
+#game-over-picture,
+#game-end-picture {
+	text-align: center;
+}
+
+#start-game,
+#load-game,
+#try-again {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+#description {
+	margin-right: .25em;
+	width: 500px;
+	float: left;
+}
+
+#description-text {
+	height: 300px;
+	overflow-y: auto;
+	margin-left: .5em;
+}
+
+#order {
+	margin-right: .25em;
+	width: 400px;
+	float: left;
+}
+
+#order-list {
+	overflow-y: auto;
+	height: 300px;
+}
+
+#environment {
+	overflow-y: auto;
+	height: 300px;
+	margin-right: .25em;
+	width: 250px;
+	float: left;
+}
+
+#rolls {
+	margin-right: .25em;
+	width: 400px;
+	float: left;
+}
+
+#rolls-text {
+	height: 300px;
+	margin-left: .5em;
+	overflow-y: auto;
+}
+
+#picture {
+	float: left;
+	position: relative;
+
+}
+#picture a {
+	padding-right: 1ex;
+	line-height: 0px;
+}
+#map {
+	float: right;
+	height: 100%;
+	display: table;
+}
+#map img {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#caption {
+	float: right;
+	clear: right;
+	text-align: center;
+	font-size: 150%;
+	width: 287px;
+}
+
+#hints {
+	clear: right;
+	float: right;
+	margin-right: 3em;
+	list-style-type: none;
+}
+#hints li {
+	cursor: pointer;
+}
+
+#result {
+	right: 20%;
+	top: 100px;
+	width: 40%;
+	position: absolute;
+}
+.result-hidden {
+	display: none;
+}
+.result-shown {
+	display: block;
+}
+
+#action-bar {
+	width: 100%;
+	height: 20%;
+	border-top: 1px solid #000000;
+	overflow-y: auto;
+}
+
+
+#stats {
+	display: inline-block;
+	width: 23%;
+	height: 100%;
+}	
+
+.stat {
+	position: relative;
+}
+
+#items {
+	float: left;
+	height: 100%;
+}
+
+
+#bindings {
+	display: inline-block;
+	width: 46%;
+	vertical-align: top;
+}
+
+.glowing {
+	text-shadow: 0px 0px 10px #ff0000;
+	transition: text-shadow 2000ms;
+}
+
+.notglowing {
+	transition: text-shadow 2000ms;
+}
+
+#objects {
+	display: inline-block;
+	width: 30%;
+	vertical-align: top;
+}
+
+#footer {
+	text-align: left;
+	font-style: italic;
+	font-size: xx-small;
+	float:left;
+	margin-left: 1ex;
+}
+#disclaimer {
+	text-align: right;
+	font-style: italic;
+	font-size: xx-small;
+}
+#disclaimer p {
+	margin-right: 1ex;
+	margin-top: 0.2ex;
+	margin-bottom: 0px;
+}
+
+#order ul,
+#environment ul,
+#action-bar ul {
+	list-style-type: none;
+	margin-top: 0px;
+	padding-left: 1ex;
+	cursor: pointer;
+}
+
+#result {
+	right: 25%;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 3ex;
+	border: 1px solid #000000;
+}
+
+#eventtitle {
+	width: 100%;
+}
+
+#actions ul {
+	margin-bottom: 0px;
+}
+
+#stats ul {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+}
+
+#click-to-close {
+	text-align: right;
+	font-size: small;
+	font-style: italic;
+}
+
+#order li div {
+	display: inline-block;
+}
+
+#attacks li {
+	display: inline-block;
+	width: 49%;
+}
+
+#stats li {
+	display: inline-block;
+	width: 100%;
+}
+
+#actions li {
+	display: inline-block;
+	width: 24%;
+}
+
+#decisions li {
+	display: inline-block;
+	width: 100%;
+}
+
+#bindings li {
+	display: inline-block;
+	width: 100%;
+}
+#bindings li:nth-child(even) {
+	background-color: #777;
+}
+
+.current {
+	background-color: #777;
+}
+
+#action-bar .targetted {
+	background: radial-gradient(#777 50%, #555 100%);
+}
+
+#order .targetted {
+	background: radial-gradient(#555 50%, #302f2f 100%);
+}
+
+#order li:hover,
+#actions li:hover,
+#decisions li:hover,
+#objects li:hover,
+#bindings li span.item:hover {
+	transition: text-shadow 0ms;
+	text-shadow: 0px 0px 10px;
+} 
+
+.statname {
+	vertical-align: top;
+	font-weight: bold;
+	display: inline-block;
+	width: 50%;
+}
+#bindings .location {
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: top;
+	width: 15%;
+}
+
+#bindings .effects {
+	font-weight: bold;
+	display: inline-block;
+	vertical-align: top;
+	width: 15%;
+}
+
+#bindings .item {
+	display: inline-block;
+	width: 70%;
+}
+
+.bar {
+	width:110px; 
+	position: relative;
+}
+
+.temp {
+	color: #ffa0a0;
+}
+
+.title {
+	outline: 1px double #000000;
+	outline-offset: -1px;
+	background: #ffffff;
+	color: #000000;
+	text-align: center;
+}
+
+.title-highlight {
+	outline: 1px double #000000;
+	outline-offset: -1px;
+	background: lightgreen;
+	color: #000000;
+	text-align: center;
+}
+
+#objects .object-title {
+	display: inline-block;
+	width: 100%;
+	outline: 1px double #000;
+	outline-offset: -1px;
+	background: none repeat scroll 0% 0% #FFF;
+	color: #000;
+	text-align: center;
+	padding-right: 1ex;
+	margin-left: -1ex;
+    cursor: default;
+}
+#objects .object-title:hover {
+	text-shadow: none;
+} 
+
+.enebuff {
+	width: 80%;
+	margin-left: 1em;
+}
